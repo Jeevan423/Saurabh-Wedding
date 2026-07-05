@@ -72,7 +72,17 @@ export default function Navbar() {
         >
           <button onClick={() => go("home")} className="flex items-center gap-2" data-cursor>
             <Om className="h-6 w-6 text-gold" />
-            <span className="font-display text-lg font-semibold text-maroon">S &amp; V</span>
+            <span className="flex items-center gap-1.5 font-display text-xl font-bold text-maroon tracking-wider">
+              S
+              <motion.span
+                animate={{ scale: [1, 1.25, 1] }}
+                transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+                className="flex items-center justify-center"
+              >
+                <FaHeart className="h-4 w-4 text-temple-red drop-shadow-[0_0_8px_rgba(220,38,38,0.9)]" />
+              </motion.span>
+              V
+            </span>
           </button>
 
           <ul className="hidden items-center gap-1 lg:flex">

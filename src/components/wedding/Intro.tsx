@@ -12,7 +12,7 @@ export default function Intro({ onOpen }: { onOpen: () => void }) {
   useEffect(() => {
     if (!root.current) return;
     const ctx = gsap.context(() => {
-      gsap.from(".intro-envelope", {
+      gsap.from(".intro-wrapper", {
         y: 60,
         opacity: 0,
         scale: 0.85,
@@ -20,7 +20,7 @@ export default function Intro({ onOpen }: { onOpen: () => void }) {
         ease: "power3.out",
       });
       gsap.from(".intro-hint", { opacity: 0, y: 20, delay: 0.9, duration: 1 });
-      gsap.to(".intro-envelope", {
+      gsap.to(".intro-wrapper", {
         y: "-=14",
         duration: 3,
         repeat: -1,
@@ -55,7 +55,8 @@ export default function Intro({ onOpen }: { onOpen: () => void }) {
       .to(".intro-seal", { scale: 1.25, duration: 0.25, ease: "back.out(3)" })
       .to(".intro-seal", { scale: 0, rotate: 40, opacity: 0, duration: 0.5, ease: "power2.in" })
       .to(".intro-flap", { rotateX: -180, duration: 1, ease: "power3.inOut", transformOrigin: "top center" }, "-=0.2")
-      .to(".intro-card", { y: -170, duration: 1.1, ease: "power3.out" }, "-=0.5")
+      .to(".intro-card", { opacity: 1, duration: 0.1 }, "-=0.9") // Card becomes visible right as flap opens
+      .to(".intro-card", { y: -170, duration: 1.1, ease: "power3.out" }, "-=0.8")
       .to(".intro-card", { scale: 1.05, duration: 0.6, ease: "power2.out" }, "-=0.3")
       .to(".burst", { scale: 1.6, opacity: 0, duration: 1, ease: "power2.out", stagger: 0.02 }, "-=0.9")
       .to(".intro-stage", { scale: 2.6, duration: 1.1, ease: "power2.inOut" }, "-=0.5")
@@ -83,11 +84,11 @@ export default function Intro({ onOpen }: { onOpen: () => void }) {
       </div>
 
       <div className="intro-stage relative flex flex-col items-center" style={{ transformStyle: "preserve-3d" }}>
-        <div className="relative h-[240px] w-[320px] sm:h-[300px] sm:w-[420px]" style={{ transformStyle: "preserve-3d" }}>
+        <div className="intro-wrapper relative h-[240px] w-[320px] sm:h-[300px] sm:w-[420px]" style={{ transformStyle: "preserve-3d" }}>
           {/* invitation card (behind, slides up) */}
-          <div className="intro-card absolute inset-x-4 top-3 z-10 h-[92%] rounded-lg bg-cream p-4 text-center shadow-2xl gold-ring-border">
-            <div className="flex h-full flex-col items-center justify-center gap-2 rounded-md border border-gold/40 px-3 py-4">
-              <Om className="h-7 w-7 text-gold" />
+          <div className="intro-card absolute inset-x-4 top-3 z-10 h-[92%] rounded-lg bg-cream p-4 text-center shadow-2xl gold-ring-border opacity-0">
+            <div className="flex h-full flex-col items-center justify-center gap-2 rounded-md border border-gold/40 px-3 py-4 bg-white/50">
+              <Om className="h-7 w-7 text-gold drop-shadow-sm" />
               <p className="font-deva text-[11px] text-temple-red">|| Shubh Vivah ||</p>
               <p className="font-display text-lg font-semibold text-maroon sm:text-xl">Saurabh &amp; Vaishnavi</p>
               <p className="font-serif text-xs italic text-muted-foreground">request the pleasure of your company</p>
@@ -95,15 +96,15 @@ export default function Intro({ onOpen }: { onOpen: () => void }) {
           </div>
 
           {/* envelope body */}
-          <div onClick={handleOpen} className="intro-envelope absolute inset-0 z-20 cursor-pointer drop-shadow-2xl" style={{ transformStyle: "preserve-3d" }}>
-            <div className="absolute inset-0 overflow-hidden rounded-lg bg-gradient-to-br from-saffron to-gold shadow-[0_40px_80px_-20px_rgba(0,0,0,0.6)]">
+          <div onClick={handleOpen} className="intro-envelope absolute inset-0 z-20 cursor-pointer drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)]" style={{ transformStyle: "preserve-3d" }}>
+            <div className="absolute inset-0 overflow-hidden rounded-lg bg-gradient-to-br from-saffron to-gold shadow-inner">
               {/* body texture lines */}
               <div className="absolute inset-0 opacity-30">
                 <div className="absolute bottom-0 left-0 h-full w-full [clip-path:polygon(0_100%,50%_45%,100%_100%)] bg-gold-deep/40" />
                 <div className="absolute bottom-0 left-0 h-full w-1/2 [clip-path:polygon(0_20%,100%_60%,0_100%)] bg-black/10" />
                 <div className="absolute bottom-0 right-0 h-full w-1/2 [clip-path:polygon(100%_20%,0_60%,100%_100%)] bg-black/10" />
               </div>
-              <div className="pointer-events-none absolute inset-0 border-2 border-gold-light/40" />
+              <div className="pointer-events-none absolute inset-0 border-2 border-gold-light/40 rounded-lg" />
             </div>
 
             {/* flap */}
@@ -111,7 +112,7 @@ export default function Intro({ onOpen }: { onOpen: () => void }) {
               className="intro-flap absolute left-0 top-0 z-30 h-1/2 w-full origin-top"
               style={{ transformStyle: "preserve-3d", backfaceVisibility: "hidden" }}
             >
-              <div className="h-full w-full [clip-path:polygon(0_0,100%_0,50%_100%)] bg-gradient-to-b from-saffron to-gold shadow-lg">
+              <div className="h-full w-full [clip-path:polygon(0_0,100%_0,50%_100%)] bg-gradient-to-b from-saffron to-gold shadow-[0_10px_20px_rgba(0,0,0,0.3)]">
                 <div className="absolute inset-0 [clip-path:polygon(0_0,100%_0,50%_100%)] border-b border-gold-deep/30 bg-black/5" />
               </div>
             </div>
@@ -137,7 +138,7 @@ export default function Intro({ onOpen }: { onOpen: () => void }) {
         {/* hint */}
         <button
           onClick={handleOpen}
-          className="intro-hint mt-10 flex flex-col items-center gap-3"
+          className="intro-hint mt-24 flex flex-col items-center gap-3"
           data-cursor
           aria-label="Tap to open the invitation"
         >
