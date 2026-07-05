@@ -12,11 +12,11 @@ export const wedding = {
   groom: {
     name: "Saurabh",
     fullName: "Saurabh Kailas Gangavane",
-    parents: "Son of Mrs. Pratiksha & Mr. Kailas Sriram Gangavane",
+    parents: "Son of Mrs. Pratibha & Mr. Kailas Shriram Gangawane",
     about:
       "A gentle dreamer who cherishes tradition, family and quiet mornings by the temple. Kind, devoted and steadfast.",
   },
-  hashtag: "#SaurabhWedsVaishnavi",
+  hashtag: "#SaurabhwedsVaishnavi",
   // Wedding date used for the countdown.
   date: "2026-07-09T13:21:00+05:30",
   dateLabel: "9th July 2026",
@@ -38,16 +38,16 @@ export const events = [
   {
     name: "Mehendi",
     icon: FaHandHoldingHeart,
-    date: "7th July 2026",
-    time: "4:00 PM",
-    venue: "Residence, Tal. Sinnar, Dist. Nashik",
+    date: "6th July 2026",
+    time: "7:00 PM",
+    venue: "Gurudatta nagar near govt. ITI nayagaon road, Tal. Sinnar, Dist. Nashik",
     desc: "Intricate henna, laughter, and joyous celebrations with the womenfolk.",
   },
   {
     name: "Engagement",
     icon: FaRing,
     date: "8th July 2026",
-    time: "9:00 AM",
+    time: "7:00 PM",
     venue: "Santraj Mangal Karyalay, Pandharpur",
     desc: "Exchanging rings and promising a lifetime of love and togetherness.",
   },
@@ -55,12 +55,12 @@ export const events = [
     name: "Haldi",
     icon: FaSpa,
     date: "8th July 2026",
-    time: "10:30 AM",
+    time: "9:00 PM",
     venue: "Santraj Mangal Karyalay, Pandharpur",
     desc: "A golden turmeric ceremony blessing the couple with joy and radiance.",
   },
   {
-    name: "Shubh Vivah Sohala",
+    name: "Wedding Ceremony",
     icon: FaHeart,
     date: "9th July 2026",
     time: "1:21 PM",
@@ -110,15 +110,15 @@ export const families = {
     side: "Bride's Family",
     house: "Homkar Parivar",
     members: [
-      { name: "Sau. Rohini & Shri. Dattatray Vasantrav Homkar", relation: "Parents" },
+      { name: "Mrs. Rohini & Mr. Dattatray Vasantrav Homkar", relation: "Parents" },
       { name: "Isbavi, Tal. Pandharpur, Dist. Solapur", relation: "Residence" },
     ],
   },
   groom: {
     side: "Groom's Family",
-    house: "Gangavane Parivar",
+    house: "Gangawane Parivar",
     members: [
-      { name: "Sau. Pratibha & Shri. Kailas Sriram Gangavane", relation: "Parents" },
+      { name: "Mrs. Pratibha & Mr. Kailas Shriram Gangawane", relation: "Parents" },
       { name: "Tal. Sinnar, Dist. Nashik", relation: "Residence" },
     ],
   },

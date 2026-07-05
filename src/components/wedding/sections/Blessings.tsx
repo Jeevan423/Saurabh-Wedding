@@ -46,7 +46,7 @@ export default function Blessings() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.3} className="mt-8 flex justify-center gap-12 md:justify-start">
+          <Reveal delay={0.3} className="mt-16 flex justify-center gap-12 md:mt-12 md:justify-start">
             <Diya className="w-20" />
             <Diya className="w-20" />
           </Reveal>

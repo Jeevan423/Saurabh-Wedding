@@ -7,7 +7,12 @@ export default function FloatingButtons() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 600);
+    const onScroll = () => {
+      const isPastHero = window.scrollY > 600;
+      // Hide button if we're near the bottom (e.g. in the footer area)
+      const isAtBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 150;
+      setShow(isPastHero && !isAtBottom);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);

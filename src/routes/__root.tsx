@@ -77,15 +77,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sanika & Aarav · A Marathi Wedding Invitation" },
+      { title: "Saurabh weds Vaishnavi" },
       {
         name: "description",
         content:
-          "With the divine blessings of Lord Vitthal & Goddess Rukmini, Sanika and Aarav joyfully invite you to celebrate their wedding. Explore events, gallery, venue and RSVP.",
+          "With the divine blessings of Lord Vitthal & Goddess Rukmini, Saurabh and Vaishnavi joyfully invite you to celebrate their wedding. Explore events, gallery, venue and RSVP.",
       },
-      { name: "author", content: "Sanika & Aarav" },
+      { name: "keywords", content: "Saurabh weds Vaishnavi, Saurabh and Vaishnavi Wedding, Marathi Wedding, Vaishnavi weds Saurabh" },
+      { name: "author", content: "Saurabh & Vaishnavi" },
       { name: "theme-color", content: "#7A0E1A" },
-      { property: "og:title", content: "Sanika & Aarav · A Marathi Wedding Invitation" },
+      { property: "og:title", content: "Saurabh weds Vaishnavi" },
       {
         property: "og:description",
         content:
@@ -93,6 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "google-site-verification", content: "Zp9fun1_JR6yCerpu8E9DaKqViwARGpKlz3GSqqcA8Q" }
     ],
     links: [
       { rel: "stylesheet", href: appCss },

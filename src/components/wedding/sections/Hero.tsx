@@ -64,7 +64,7 @@ export default function Hero() {
             <FaHeart className="animate-float text-temple-red" />
             <span className="h-px w-10 divider-gold sm:w-16" />
           </span>
-          <span className="block text-shimmer">{wedding.bride.name}</span>
+          <span className="block">{wedding.bride.name}</span>
         </motion.h1>
 
         <motion.div

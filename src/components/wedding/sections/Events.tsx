@@ -11,7 +11,7 @@ export default function Events() {
         deva="|| Wedding Ceremony ||"
         kicker="Celebrations"
         title="Wedding Events"
-        subtitle="Join us as we celebrate each cherished ritual, from Haldi to the grand Reception."
+        subtitle="Join us as we celebrate each cherished ritual, from the vibrant hues of Mehndi to the sacred vows of our Wedding."
       />
 
       <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
