@@ -1,0 +1,335 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Marathi Royal Wedding — Luxury Design System
+ * Inspired by Lord Vitthal & Goddess Rukmini, Pandharpur temple architecture.
+ * Palette: cream/ivory backgrounds, royal gold, maroon, temple red, dark brown.
+ * All colors use oklch. Never hardcode colors in components — use tokens.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand tokens */
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-deep: var(--gold-deep);
+  --color-maroon: var(--maroon);
+  --color-maroon-deep: var(--maroon-deep);
+  --color-temple-red: var(--temple-red);
+  --color-brown: var(--brown);
+  --color-cream: var(--cream);
+  --color-saffron: var(--saffron);
+
+  --font-display: "Cinzel", serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Poppins", sans-serif;
+  --font-deva: "Noto Sans Devanagari", sans-serif;
+
+  --shadow-luxe: 0 30px 80px -30px color-mix(in oklab, var(--maroon) 40%, transparent);
+  --shadow-gold: 0 20px 60px -20px color-mix(in oklab, var(--gold) 45%, transparent);
+  --shadow-soft: 0 12px 40px -18px color-mix(in oklab, var(--brown) 30%, transparent);
+}
+
+:root {
+  --radius: 1rem;
+
+  --background: oklch(0.992 0.008 92);
+  --foreground: oklch(0.28 0.045 55);
+
+  --card: oklch(0.996 0.006 92);
+  --card-foreground: oklch(0.28 0.045 55);
+  --popover: oklch(0.996 0.006 92);
+  --popover-foreground: oklch(0.28 0.045 55);
+
+  --primary: oklch(0.36 0.13 24);
+  --primary-foreground: oklch(0.985 0.01 92);
+  --secondary: oklch(0.95 0.02 88);
+  --secondary-foreground: oklch(0.36 0.13 24);
+  --muted: oklch(0.955 0.014 88);
+  --muted-foreground: oklch(0.48 0.05 60);
+  --accent: oklch(0.72 0.12 82);
+  --accent-foreground: oklch(0.28 0.05 45);
+
+  --destructive: oklch(0.5 0.18 28);
+  --destructive-foreground: oklch(0.985 0.01 92);
+
+  --border: oklch(0.86 0.03 82);
+  --input: oklch(0.88 0.025 82);
+  --ring: oklch(0.72 0.12 82);
+
+  /* Brand */
+  --gold: oklch(0.72 0.12 82);
+  --gold-light: oklch(0.85 0.09 88);
+  --gold-deep: oklch(0.58 0.11 70);
+  --maroon: oklch(0.36 0.13 24);
+  --maroon-deep: oklch(0.27 0.11 24);
+  --temple-red: oklch(0.48 0.18 28);
+  --brown: oklch(0.3 0.05 55);
+  --cream: oklch(0.992 0.008 92);
+  --saffron: oklch(0.78 0.14 65);
+
+  --gradient-gold: linear-gradient(135deg, oklch(0.85 0.09 88), oklch(0.72 0.12 82) 45%, oklch(0.58 0.11 70));
+  --gradient-royal: linear-gradient(135deg, oklch(0.55 0.18 45), oklch(0.35 0.15 35));
+  --gradient-saffron: radial-gradient(120% 80% at 50% 0%, oklch(0.95 0.06 82 / 0.6), transparent 60%);
+}
+
+.dark {
+  --background: oklch(0.2 0.03 45);
+  --foreground: oklch(0.95 0.01 92);
+  --card: oklch(0.25 0.035 45);
+  --card-foreground: oklch(0.95 0.01 92);
+  --popover: oklch(0.25 0.035 45);
+  --popover-foreground: oklch(0.95 0.01 92);
+  --primary: oklch(0.72 0.12 82);
+  --primary-foreground: oklch(0.22 0.05 45);
+  --secondary: oklch(0.3 0.04 45);
+  --secondary-foreground: oklch(0.95 0.01 92);
+  --muted: oklch(0.3 0.04 45);
+  --muted-foreground: oklch(0.72 0.03 70);
+  --accent: oklch(0.72 0.12 82);
+  --accent-foreground: oklch(0.22 0.05 45);
+  --border: oklch(0.4 0.04 60);
+  --input: oklch(0.4 0.04 60);
+  --ring: oklch(0.72 0.12 82);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--gold) 40%, transparent);
+    color: var(--maroon-deep);
+  }
+
+  /* Luxury gold scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: color-mix(in oklab, var(--cream) 80%, var(--gold-light));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gradient-gold);
+    border-radius: 999px;
+  }
+}
+
+/* ===== Utilities ===== */
+
+@utility font-display {
+  font-family: var(--font-display);
+}
+@utility font-serif {
+  font-family: var(--font-serif);
+}
+@utility font-deva {
+  font-family: var(--font-deva);
+}
+
+@utility text-gradient-gold {
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-gold {
+  background-image: var(--gradient-gold);
+}
+@utility bg-gradient-royal {
+  background-image: var(--gradient-royal);
+}
+@utility bg-saffron-glow {
+  background-image: var(--gradient-saffron);
+}
+
+@utility shadow-luxe {
+  box-shadow: var(--shadow-luxe);
+}
+@utility shadow-gold {
+  box-shadow: var(--shadow-gold);
+}
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+@utility glass-gold {
+  background: color-mix(in oklab, var(--cream) 60%, transparent);
+  backdrop-filter: blur(16px) saturate(150%);
+  border: 1px solid color-mix(in oklab, var(--gold) 45%, transparent);
+}
+
+@utility glass-dark {
+  background: color-mix(in oklab, var(--maroon-deep) 55%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--gold) 35%, transparent);
+}
+
+@utility divider-gold {
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+
+@utility hover-lift {
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-gold);
+  }
+}
+
+@utility gold-ring-border {
+  border: 1px solid color-mix(in oklab, var(--gold) 60%, transparent);
+}
+
+/* ===== Keyframes ===== */
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(6deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes shimmerText {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes flameFlicker {
+  0%,
+  100% {
+    transform: scale(1) rotate(-2deg);
+    opacity: 0.95;
+  }
+  25% {
+    transform: scale(1.08, 0.94) rotate(2deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.96, 1.06) rotate(-1deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: scale(1.05, 0.97) rotate(1deg);
+    opacity: 1;
+  }
+}
+
+@keyframes bellSwing {
+  0%,
+  100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold) 45%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 40px 6px color-mix(in oklab, var(--gold) 30%, transparent);
+  }
+}
+
+@utility animate-float {
+  animation: floatUp 6s ease-in-out infinite;
+}
+@utility animate-flame {
+  animation: flameFlicker 1.6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+@utility animate-bell {
+  animation: bellSwing 3.5s ease-in-out infinite;
+  transform-origin: top center;
+}
+@utility animate-spin-slow {
+  animation: spinSlow 60s linear infinite;
+}
+@utility animate-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@utility text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--gold-deep) 0%,
+    var(--gold-light) 25%,
+    var(--gold) 50%,
+    var(--gold-light) 75%,
+    var(--gold-deep) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmerText 4s linear infinite;
+}
